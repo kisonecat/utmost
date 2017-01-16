@@ -1,0 +1,3 @@
+username password user
+bob test user
+super passw0rd admin
