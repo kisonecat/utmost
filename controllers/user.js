@@ -11,6 +11,7 @@ var crypto        = require('crypto');
 var config        = require('../config/config');
 var passport      = require('passport');
 var nodemailer    = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 var LoginAttempt  = require('../models/LoginAttempt');
 
 /**
@@ -126,13 +127,7 @@ module.exports.controller = function (app) {
       var user = req.user;
       
       // Create reusable transporter object using SMTP transport
-      var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-          user: config.gmail.user,
-          pass: config.gmail.password
-        }
-      });
+      var transporter = nodemailer.createTransport(smtpTransport());
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/accountVerification', {
@@ -448,13 +443,7 @@ module.exports.controller = function (app) {
     workflow.on('sendWelcomeEmail', function (user) {
 
       // Create reusable transporter object using SMTP transport
-      var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-          user: config.gmail.user,
-          pass: config.gmail.password
-        }
-      });
+      var transporter = nodemailer.createTransport(smtpTransport());	
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/welcome', {
@@ -656,13 +645,7 @@ module.exports.controller = function (app) {
     workflow.on('sendValidateEmail', function (user, verifyToken) {
 
       // Create reusable transporter object using SMTP transport
-      var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-          user: config.gmail.user,
-          pass: config.gmail.password
-        }
-      });
+      var transporter = nodemailer.createTransport(smtpTransport());		
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/accountVerification', {
@@ -719,13 +702,7 @@ module.exports.controller = function (app) {
     workflow.on('sendWelcomeEmail', function (user) {
 
       // Create reusable transporter object using SMTP transport
-      var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-          user: config.gmail.user,
-          pass: config.gmail.password
-        }
-      });
+      var transporter = nodemailer.createTransport(smtpTransport());	
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/welcome', {
@@ -933,13 +910,7 @@ module.exports.controller = function (app) {
     workflow.on('sendWelcomeEmail', function (user) {
 
       // Create reusable transporter object using SMTP transport
-      var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-          user: config.gmail.user,
-          pass: config.gmail.password
-        }
-      });
+      var transporter = nodemailer.createTransport(smtpTransport());	
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/welcome', {
