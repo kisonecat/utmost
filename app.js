@@ -43,7 +43,7 @@ var io     = require('socket.io')(server);
  * Configure Mongo Database
  */
 
-mongoose.connect(config.mongodb.url, {user: config.mongodb.user, pwd: config.mongodb.password});
+mongoose.connect(config.mongodb.url, {user: config.mongodb.user, pass: config.mongodb.password});
 var db = mongoose.connection;
 
 // Use Mongo for session store
