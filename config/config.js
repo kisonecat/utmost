@@ -101,11 +101,6 @@ config.smtp                    = {};
 config.smtp.name               = process.env.SMTP_FROM_NAME    || 'UTMOST Books';
 config.smtp.address            = process.env.SMTP_FROM_ADDRESS || 'books@aimath.org';
 
-// How are we sending it?
-config.gmail                   = {};
-config.gmail.user              = process.env.SMTP_USERNAME || 'username@gmail.com';
-config.gmail.password          = process.env.SMTP_PASSWORD || 'password';
-
 /**
  * Authorization Configuration
  */
