@@ -14,7 +14,7 @@ var colors            = require('colors');
 var async             = require('async');
 var spawn             = require('child_process').spawn;
     
-mongoose.connect(config.mongodb.url, {uri_decode_auth: true});
+mongoose.connect(config.mongodb.url, {user: config.mongodb.user, pwd: config.mongodb.password});
 var db = mongoose.connection;
 
 var User = require('../models/User.js');

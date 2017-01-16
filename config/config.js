@@ -58,8 +58,10 @@ config.loggly.json    = true;
  * Database Configuration
  */
 
-config.mongodb        = {};
-config.mongodb.url    = process.env.MONGODB_URL || 'localhost';
+config.mongodb          = {};
+config.mongodb.url      = process.env.MONGODB_URL || 'localhost';
+config.mongodb.user     = process.env.MONGODB_USER || 'owner';
+config.mongodb.password = process.env.MONGODB_PASS || 'password';
 
 /**
  * Session Configuration
