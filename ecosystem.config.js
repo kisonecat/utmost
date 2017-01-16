@@ -6,12 +6,10 @@ module.exports = {
 	exec_mode   : "cluster",
 	watch       : true,
 	env: {
-	    "NODE_ENV": "development",
-	    "PORT": "7000"	
+	    "NODE_ENV": "development"
 	},
 	env_production : {
-	    "NODE_ENV": "production",
-	    "PORT": "7000"
+	    "NODE_ENV": "production"
 	}
     }]
 }
