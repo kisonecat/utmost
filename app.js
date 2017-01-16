@@ -365,9 +365,6 @@ app.use(flash());
 app.use('/admin', configPassport.isAdministrator);
 app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
-app.use('/aata', express.static(__dirname + '/aata', { maxAge: week }));
-app.use('/fcla', express.static(__dirname + '/fcla', { maxAge: week }));
-
 // Dynamically include routes (via controllers)
 fs.readdirSync('./controllers').forEach(function (file) {
   if (file.substr(-3) === '.js') {
