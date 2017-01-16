@@ -43,7 +43,7 @@ var io     = require('socket.io')(server);
  * Configure Mongo Database
  */
 
-mongoose.connect(config.mongodb.url);
+mongoose.connect(config.mongodb.url, {uri_decode_auth: true});
 var db = mongoose.connection;
 
 // Use Mongo for session store
